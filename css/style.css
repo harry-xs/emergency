@@ -17,10 +17,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans G
 ==========================*/
 
 /* 品牌头 */
-.home-hero{text-align:center;padding:44px 24px 36px;background:#1E6B8A}
-.hero-logo{width:72px;height:72px;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto}
-.hero-h1{font-size:26px;font-weight:bold;color:#FFF;margin-bottom:6px;letter-spacing:1px}
-.hero-p{font-size:13px;color:rgba(255,255,255,.78);letter-spacing:.3px}
+.home-hero{
+  text-align:center;padding:56px 24px 44px;
+  background:url(../hero-bg.jpg) center/cover no-repeat,#1E6B8A;
+  position:relative
+}
+.home-hero::before{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,.30);
+  z-index:0
+}
+.home-hero>*{position:relative;z-index:1}
+.hero-h1{
+  font-size:28px;font-weight:800;color:#12262D;margin-bottom:6px;letter-spacing:2px
+}
+.hero-p{font-size:15px;color:#0D1F28;letter-spacing:.5px;font-weight:700;text-shadow:0 1px 2px rgba(255,255,255,.5)}
 
 /* 核心功能按钮 */
 .home-actions{padding:20px 16px 0}
