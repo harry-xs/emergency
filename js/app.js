@@ -132,7 +132,7 @@ function showResult(){
 }
 
 function buildManualSelect(types){
-  var html = '<div class="warning-icon">⚠️</div><div class="warning-text">图片无法精准识别，请手动选择伤情类型</div><div class="manual-select">';
+  var html = '<div class="warning-text">图片无法精准识别，请手动选择伤情类型</div><div class="manual-select">';
   types.forEach(function(t){
     var sel = ST.selectedInjury===t.id ? ' selected' : '';
     html += '<span class="injury-option'+sel+'" data-id="'+t.id+'" onclick="onManualSelect(\''+t.id+'\')">'+t.name+'</span>';
@@ -155,7 +155,7 @@ function displayInjuryResult(injuryId, confidence){
   if(!detail) return;
 
   if(detail.isCritical){
-    document.getElementById('dangerAlert').innerHTML='<div class="danger-header"><div class="danger-icon">🚨</div><div class="danger-title">高风险伤情！</div></div><div class="danger-text">请保持冷静，立即点击下方按钮联系紧急救援！</div>';
+    document.getElementById('dangerAlert').innerHTML='<div class="danger-header"><div class="danger-title">高风险伤情！</div></div><div class="danger-text">请保持冷静，立即点击下方按钮联系紧急救援！</div>';
     document.getElementById('dangerAlert').style.display='';
   }
 
@@ -164,7 +164,7 @@ function displayInjuryResult(injuryId, confidence){
   var header = '<div class="result-header">'+badge+'<span class="result-confidence">'+confText+'</span></div>';
   header += '<div class="result-title">'+detail.name+'</div>';
 
-  var steps = '<div class="guide-section"><div class="guide-title">📋 急救指导步骤</div>';
+  var steps = '<div class="guide-section"><div class="guide-title">急救指导步骤</div>';
   detail.steps.forEach(function(s,i){
     steps += '<div class="guide-step"><span class="guide-step-num">'+(i+1)+'</span><span class="guide-step-text">'+s+'</span></div>';
   });
@@ -172,7 +172,7 @@ function displayInjuryResult(injuryId, confidence){
 
   var prec = '';
   if(detail.precaution){
-    prec = '<div class="guide-title" style="margin-top:10px">❗ 注意事项</div><div class="precaution-text">'+detail.precaution+'</div>';
+    prec = '<div class="guide-title" style="margin-top:10px">注意事项</div><div class="precaution-text">'+detail.precaution+'</div>';
   }
 
   document.getElementById('resultSection').innerHTML = header + steps + prec;
@@ -261,7 +261,7 @@ function submitRescue(){
 
   setTimeout(function(){
     btn.disabled=false;
-    btn.textContent='🚑 提交救援请求';
+    btn.textContent='提交救援请求';
     ST.rescueSubmitted=true;
     ST.rescueInjury = ST.selectedInjury;
     ST.rescueTime = new Date();
@@ -371,17 +371,17 @@ function initDetail(id){
   var tag = KB.getCatName(a.category);
   var tc = 'meta-tag-' + KB.getTagClass(a.category);
   var html = '<div class="article-header"><div class="article-icon">'+a.icon+'</div><div class="article-title">'+a.title+'</div><span class="article-tag '+tc+'">'+tag+'</span></div>';
-  if(a.overview) html += '<div class="section"><div class="section-title">📖 概述</div><div class="section-text">'+a.overview+'</div></div>';
+  if(a.overview) html += '<div class="section"><div class="section-title">概述</div><div class="section-text">'+a.overview+'</div></div>';
   if(a.symptoms&&a.symptoms.length>0){
-    html += '<div class="section"><div class="section-title">🔍 识别特征</div>';
+    html += '<div class="section"><div class="section-title">识别特征</div>';
     a.symptoms.forEach(function(s){ html += '<div class="list-item">'+s+'</div>'; });
     html += '</div>';
   }
-  html += '<div class="section"><div class="section-title">🩺 急救步骤</div>';
+  html += '<div class="section"><div class="section-title">急救步骤</div>';
   a.steps.forEach(function(s,i){ html += '<div class="step-card"><div class="step-num">'+(i+1)+'</div><div class="step-text">'+s+'</div></div>'; });
   html += '</div>';
   if(a.precaution&&a.precaution.length>0){
-    html += '<div class="section"><div class="section-title">⚠️ 注意事项</div><div class="precaution-box">';
+    html += '<div class="section"><div class="section-title">注意事项</div><div class="precaution-box">';
     a.precaution.forEach(function(p){ html += '<div class="precaution-item">'+p+'</div>'; });
     html += '</div></div>';
   }

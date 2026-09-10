@@ -11,220 +11,293 @@
 
 <!-- ====== 首页 ====== -->
 <div id="page-home" class="page active">
-  <div class="hero-section">
-    <div class="hero-icon">⛑️</div>
-    <div class="hero-title">应急救护助手</div>
-    <div class="hero-subtitle">AI智能伤情识别 · 一键救援上报</div>
+
+  <!-- 品牌头 -->
+  <div class="home-hero">
+    <svg class="hero-logo" viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/><path d="M28 42 L36 52 L52 30" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h1 class="hero-h1">应急救护助手</h1>
+    <p class="hero-p">山岳景区户外应急救援 · AI智能伤情识别 · 一键求援</p>
   </div>
 
-  <div class="action-area">
-    <button class="btn-ai" onclick="navTo('ai')">
-      <span class="btn-icon">🤖</span>
-      <span class="btn-text">
-        <span class="btn-title">AI伤情识别</span>
-        <span class="btn-desc">拍照上传 · 智能分析伤情</span>
+  <!-- 核心功能 -->
+  <div class="home-actions">
+    <button class="act-btn act-ai" onclick="navTo('ai')">
+      <svg width="44" height="44" viewBox="0 0 44 44"><rect x="2" y="2" width="40" height="40" rx="6" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><circle cx="22" cy="19" r="3.5" fill="rgba(255,255,255,.5)"/><path d="M22 23 L22 32 M18 38 L22 32 L26 38 M14 28 L18 32 M30 28 L26 32" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="act-body">
+        <span class="act-title">AI伤情识别</span>
+        <span class="act-desc">拍照上传，智能分析伤情</span>
       </span>
-      <span class="btn-arrow">→</span>
+      <svg class="act-arrow" viewBox="0 0 20 20"><path d="M7 4 L13 10 L7 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
 
-    <button class="btn-rescue" onclick="navTo('rescue')">
-      <span class="btn-icon">🆘</span>
-      <span class="btn-text">
-        <span class="btn-title">一键救援上报</span>
-        <span class="btn-desc">自动定位 · 快速求援</span>
+    <button class="act-btn act-sos" onclick="navTo('rescue')">
+      <svg width="44" height="44" viewBox="0 0 44 44"><rect x="2" y="2" width="40" height="40" rx="6" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/><text x="22" y="28" text-anchor="middle" fill="#fff" font-size="18" font-weight="bold">SOS</text></svg>
+      <span class="act-body">
+        <span class="act-title">一键救援上报</span>
+        <span class="act-desc">自动定位，快速求援</span>
       </span>
-      <span class="btn-arrow">→</span>
+      <svg class="act-arrow" viewBox="0 0 20 20"><path d="M7 4 L13 10 L7 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
   </div>
 
-  <div class="section-divider">
-    <span class="divider-line"></span>
-    <span class="divider-text">离线急救知识库</span>
-    <span class="divider-line"></span>
+  <!-- 功能亮点 -->
+  <div class="feature-strip">
+    <div class="feat-item">
+      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" fill="none" stroke="#2E7D32" stroke-width="1.5"/><path d="M10 14 L13 17 L18 11" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>AI智能识别</span>
+    </div>
+    <div class="feat-dot"></div>
+    <div class="feat-item">
+      <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" fill="none" stroke="#2E7D32" stroke-width="1.5"/><path d="M14 8 L14 15 M14 17 L14 17.5" stroke="#2E7D32" stroke-width="2" stroke-linecap="round"/><circle cx="21" cy="11" r="4" fill="none" stroke="#2E7D32" stroke-width="1.2"/><path d="M18 14 L15 17 M15 11 L18 14" stroke="#2E7D32" stroke-width="1.2"/></svg>
+      <span>GPS精准定位</span>
+    </div>
+    <div class="feat-dot"></div>
+    <div class="feat-item">
+      <svg width="28" height="28" viewBox="0 0 28 28"><rect x="7" y="6" width="14" height="16" rx="2" fill="none" stroke="#2E7D32" stroke-width="1.5"/><line x1="11" y1="11" x2="17" y2="11" stroke="#2E7D32" stroke-width="1.2"/><line x1="11" y1="14" x2="17" y2="14" stroke="#2E7D32" stroke-width="1.2"/><line x1="11" y1="17" x2="15" y2="17" stroke="#2E7D32" stroke-width="1.2"/></svg>
+      <span>离线知识库</span>
+    </div>
+    <div class="feat-dot"></div>
+    <div class="feat-item">
+      <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 2 L14 7 M4 8 L8 10 M24 8 L20 10" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="16" r="8" fill="none" stroke="#2E7D32" stroke-width="1.5"/></svg>
+      <span>极速响应</span>
+    </div>
   </div>
+
+  <!-- 数据面板 -->
+  <div class="stats-panel">
+    <div class="stat-cell">
+      <span class="stat-num">24h</span>
+      <span class="stat-label">全天候守护</span>
+    </div>
+    <div class="stat-split"></div>
+    <div class="stat-cell">
+      <span class="stat-num">9类</span>
+      <span class="stat-label">伤情识别</span>
+    </div>
+    <div class="stat-split"></div>
+    <div class="stat-cell">
+      <span class="stat-num">30+</span>
+      <span class="stat-label">急救知识条目</span>
+    </div>
+  </div>
+
+  <!-- 离线知识库 -->
+  <div class="section-label">离线急救知识库</div>
 
   <div class="knowledge-grid">
-    <div class="knowledge-card card-blood" onclick="navTo('knowledge','bleeding')">
-      <span class="card-icon">🩸</span>
-      <span class="card-name">止血</span>
+    <div class="k-card k-blood" onclick="navTo('knowledge','bleeding')">
+      <svg class="kc-icon" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#C62828" stroke-width="1.5"/><path d="M18 8 C18 8 10 16 10 21 C10 25 13.6 28 18 28 C22.4 28 26 25 26 21 C26 16 18 8 18 8Z" fill="#C62828" opacity="0.12"/></svg>
+      <span class="kc-name">止血</span>
+      <span class="kc-tag">4类指导</span>
     </div>
-    <div class="knowledge-card card-bandage" onclick="navTo('knowledge','bandage')">
-      <span class="card-icon">🩹</span>
-      <span class="card-name">包扎</span>
+    <div class="k-card k-bandage" onclick="navTo('knowledge','bandage')">
+      <svg class="kc-icon" viewBox="0 0 36 36"><rect x="6" y="12" width="24" height="12" rx="3" fill="none" stroke="#F57C00" stroke-width="1.5"/><line x1="12" y1="12" x2="12" y2="24" stroke="#F57C00" stroke-width="1.2"/><line x1="18" y1="12" x2="18" y2="24" stroke="#F57C00" stroke-width="1.2"/><line x1="24" y1="12" x2="24" y2="24" stroke="#F57C00" stroke-width="1.2"/></svg>
+      <span class="kc-name">包扎</span>
+      <span class="kc-tag">2类指导</span>
     </div>
-    <div class="knowledge-card card-fixation" onclick="navTo('knowledge','fixation')">
-      <span class="card-icon">🦴</span>
-      <span class="card-name">固定</span>
+    <div class="k-card k-fix" onclick="navTo('knowledge','fixation')">
+      <svg class="kc-icon" viewBox="0 0 36 36"><line x1="6" y1="10" x2="28" y2="24" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/><line x1="6" y1="10" x2="6" y2="26" stroke="#2E7D32" stroke-width="0.8"/><line x1="28" y1="24" x2="28" y2="12" stroke="#2E7D32" stroke-width="0.8"/><circle cx="20" cy="19" r="1.5" fill="#2E7D32"/><circle cx="14" cy="16" r="1.5" fill="#2E7D32"/></svg>
+      <span class="kc-name">固定</span>
+      <span class="kc-tag">2类指导</span>
     </div>
-    <div class="knowledge-card card-survival" onclick="navTo('knowledge','survival')">
-      <span class="card-icon">🏕️</span>
-      <span class="card-name">生存</span>
+    <div class="k-card k-survive" onclick="navTo('knowledge','survival')">
+      <svg class="kc-icon" viewBox="0 0 36 36"><path d="M18 5 L26 26 L18 21 L10 26 Z" fill="none" stroke="#1E6B8A" stroke-width="1.5" stroke-linejoin="round"/><rect x="15" y="6" width="6" height="8" rx="1" fill="none" stroke="#1E6B8A" stroke-width="1"/></svg>
+      <span class="kc-name">生存</span>
+      <span class="kc-tag">3类指导</span>
     </div>
   </div>
 
-  <div class="footer-tips">
-    <div class="tips-item"><span class="tips-icon">⚠️</span><span class="tips-text">本应用仅供现场急救参考，不能替代专业医疗诊断</span></div>
+  <!-- 底部信息 -->
+  <div class="home-footer">
+    <div class="disclaimer inline-dsc">
+      <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#C62828" stroke-width="1.2"/><line x1="9" y1="5" x2="9" y2="10" stroke="#C62828" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="#C62828"/></svg>
+      <span>免责声明：本应用仅供现场急救参考，不能替代专业医疗诊断与治疗</span>
+    </div>
+    <div class="powered">山岳景区应急救护系统 v1.0</div>
   </div>
 </div>
 
 <!-- ====== AI伤情识别页 ====== -->
 <div id="page-ai" class="page">
-  <div class="top-bar" onclick="navBack()">← 返回</div>
-
-  <div class="step-indicator">
-    <div class="step" id="step1-mark"><div class="step-num">1</div><div class="step-label">拍摄伤处</div></div>
-    <div class="step-line" id="step-line1"></div>
-    <div class="step" id="step2-mark"><div class="step-num">2</div><div class="step-label">智能分析</div></div>
-    <div class="step-line" id="step-line2"></div>
-    <div class="step" id="step3-mark"><div class="step-num">3</div><div class="step-label">急救指导</div></div>
+  <div class="top-bar" onclick="navBack()">
+    <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>返回首页</span>
   </div>
 
-  <!-- 步骤1：上传图片 -->
+  <div class="step-indicator">
+    <div class="step" id="step1-mark"><span class="step-num">1</span><span class="step-label">拍摄伤处</span></div>
+    <span class="step-line" id="step-line1"><svg width="24" height="6" viewBox="0 0 24 6"><path d="M2 3 L22 3" stroke="#E8ECF0" stroke-width="2" stroke-linecap="round"/></svg></span>
+    <div class="step" id="step2-mark"><span class="step-num">2</span><span class="step-label">智能分析</span></div>
+    <span class="step-line" id="step-line2"><svg width="24" height="6" viewBox="0 0 24 6"><path d="M2 3 L22 3" stroke="#E8ECF0" stroke-width="2" stroke-linecap="round"/></svg></span>
+    <div class="step" id="step3-mark"><span class="step-num">3</span><span class="step-label">急救指导</span></div>
+  </div>
+
   <div class="content-card" id="ai-step1">
     <div class="upload-area" id="uploadArea" onclick="chooseImage()">
       <div id="uploadPlaceholder">
-        <div class="upload-icon">📸</div>
-        <div class="upload-text">点击拍摄伤处照片</div>
-        <div class="upload-hint">支持拍照或从相册选择</div>
+        <svg width="56" height="56" viewBox="0 0 56 56"><rect x="4" y="8" width="48" height="40" rx="6" fill="none" stroke="#C5CDD5" stroke-width="1.8"/><circle cx="19" cy="22" r="5.5" fill="none" stroke="#C5CDD5" stroke-width="1.5"/><path d="M4 40 L18 30 L28 38 L38 26 L52 36" fill="none" stroke="#C5CDD5" stroke-width="1.5" stroke-linejoin="round"/><circle cx="30" cy="13" r="6" fill="#1E6B8A" opacity="0.08"/><line x1="28" y1="13" x2="32" y2="13" stroke="#1E6B8A" stroke-width="1.5" stroke-linecap="round"/><line x1="30" y1="11" x2="30" y2="15" stroke="#1E6B8A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="upload-text">点击拍摄伤处照片</span>
+        <span class="upload-hint">支持拍照或从相册选择</span>
       </div>
       <img id="uploadPreview" class="uploaded-image" style="display:none" />
       <div class="retake-btn" id="retakeBtn" style="display:none" onclick="event.stopPropagation();retakePhoto()">重新拍摄</div>
     </div>
     <input type="file" id="fileInput" accept="image/*" capture="environment" style="display:none" onchange="onFileSelected(event)">
 
-    <div id="descSection" style="display:none;margin-top:30rpx;">
-      <div class="desc-title">补充描述（可选）</div>
-      <textarea class="desc-input" id="descInput" placeholder="请描述受伤经过、症状感受等..." maxlength="500"></textarea>
+    <div id="descSection" style="display:none;margin-top:14px">
+      <div class="desc-title">补充描述 <span class="desc-optional">（选填）</span></div>
+      <textarea class="desc-input" id="descInput" placeholder="请描述受伤经过、症状感受..." maxlength="500"></textarea>
     </div>
 
     <button class="submit-btn" id="analyzeBtn" disabled onclick="startAnalysis()">开始智能分析</button>
   </div>
 
-  <!-- 步骤2：扫描动画 -->
   <div class="content-card" id="ai-step2" style="display:none">
     <div class="scan-container">
       <div class="scan-frame">
         <img id="scanImage" class="scan-image" />
-        <div class="scan-line"></div>
+        <span class="scan-line"></span>
+        <span class="scan-corner tl"></span><span class="scan-corner tr"></span>
+        <span class="scan-corner bl"></span><span class="scan-corner br"></span>
       </div>
       <div class="scan-progress">
-        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-        <div class="progress-text">AI正在分析伤情...</div>
+        <div class="progress-bar"><span class="progress-fill" id="progressFill"></span></div>
+        <span class="progress-text">AI正在分析伤情特征，请稍候</span>
       </div>
     </div>
   </div>
 
-  <!-- 步骤3：分析结果 -->
-  <div class="content-card" id="ai-step3" style="display:none;padding-bottom:180px">
+  <div class="content-card" id="ai-step3" style="display:none;padding-bottom:160px">
     <div id="confidenceWarning" class="confidence-warning" style="display:none"></div>
     <div id="dangerAlert" class="danger-alert" style="display:none"></div>
     <div id="resultSection" class="result-section" style="display:none"></div>
   </div>
 
   <div class="fixed-bottom" id="aiBottomBtns" style="display:none">
-    <button class="btn-locate" onclick="getBrowserLocation()">📍 共享位置</button>
-    <button class="btn-rescue-report" onclick="navTo('rescue')">🆘 一键救援上报</button>
+    <button class="btn-locate" onclick="getBrowserLocation()">
+      <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7.5" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="9" cy="9" r="3" fill="currentColor" opacity="0.2"/></svg>
+      共享位置
+    </button>
+    <button class="btn-rescue-report" onclick="navTo('rescue')">一键救援上报</button>
   </div>
 </div>
 
 <!-- ====== 救援上报页 ====== -->
 <div id="page-rescue" class="page">
-  <div class="top-bar" onclick="navBack()">← 返回</div>
+  <div class="top-bar" onclick="navBack()">
+    <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>返回</span>
+  </div>
 
-  <div class="header-card">
-    <div class="header-icon">🆘</div>
-    <div class="header-title">救援上报</div>
-    <div class="header-desc">请确认以下信息后提交救援请求</div>
+  <div class="subpage-head" style="border-left-color:#F57C00">
+    <span class="subpage-head-title">救援上报</span>
+    <span class="subpage-head-desc">请确认以下信息后提交救援请求</span>
   </div>
 
   <div class="info-card">
-    <div class="card-title"><span class="title-icon">📍</span>当前位置信息</div>
-    <div id="locationInfo">
-      <div class="loc-loading"><div class="loc-spin"></div><span>正在获取位置...</span></div>
+    <div class="card-title">
+      <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#1E6B8A" stroke-width="1.3"/><circle cx="10" cy="10" r="3" fill="#F57C00" opacity="0.7"/></svg>
+      <span>当前位置信息</span>
     </div>
+    <div id="locationInfo"><div class="loc-loading"><span class="loc-spin"></span><span>正在获取位置...</span></div></div>
     <div id="locationDetail" style="display:none"></div>
-    <button class="btn-refresh" id="refreshLocBtn" style="display:none" onclick="refreshLocation()">🔄 刷新位置</button>
-    <button class="btn-get-location" id="getLocBtn" style="display:none" onclick="refreshLocation()">📡 获取位置</button>
+    <button class="btn-secondary" id="refreshLocBtn" style="display:none" onclick="refreshLocation()">刷新位置</button>
+    <button class="btn-secondary" id="getLocBtn" style="display:none" onclick="refreshLocation()">获取位置</button>
   </div>
 
   <div class="info-card">
-    <div class="card-title"><span class="title-icon">🩺</span>伤情类型</div>
+    <div class="card-title">
+      <svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="#1E6B8A" stroke-width="1.3"/><line x1="7" y1="10" x2="13" y2="10" stroke="#1E6B8A" stroke-width="1.5" stroke-linecap="round"/><line x1="10" y1="7" x2="10" y2="13" stroke="#1E6B8A" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span>伤情类型</span>
+      <span class="card-tip">必选</span>
+    </div>
     <div class="injury-grid" id="injuryGrid"></div>
   </div>
 
   <div class="info-card">
-    <div class="card-title"><span class="title-icon">📝</span>补充说明</div>
-    <textarea class="remark-input" id="remarkInput" placeholder="请描述现场情况、受伤人数等..." maxlength="500"></textarea>
+    <div class="card-title">
+      <svg width="20" height="20" viewBox="0 0 20 20"><rect x="4" y="3" width="12" height="14" rx="2" fill="none" stroke="#1E6B8A" stroke-width="1.3"/><line x1="7" y1="8" x2="13" y2="8" stroke="#C5CDD5" stroke-width="1"/><line x1="7" y1="11" x2="13" y2="11" stroke="#C5CDD5" stroke-width="1"/><line x1="7" y1="14" x2="11" y2="14" stroke="#C5CDD5" stroke-width="1"/></svg>
+      <span>补充说明</span>
+      <span class="card-tip">选填</span>
+    </div>
+    <textarea class="remark-input" id="remarkInput" placeholder="请描述现场情况、受伤人数等，方便救援人员提前准备..." maxlength="500"></textarea>
   </div>
 
   <div class="submit-section">
-    <button class="btn-submit" id="submitRescueBtn" onclick="submitRescue()">🚑 提交救援请求</button>
-    <div class="submit-tips">提交后救援团队将实时追踪您的状态</div>
+    <button class="btn-submit" id="submitRescueBtn" onclick="submitRescue()">提交救援请求</button>
+    <span class="submit-tips">提交后救援团队将实时追踪您的状态</span>
   </div>
 </div>
 
 <!-- ====== 救援追踪页 ====== -->
 <div id="page-tracking" class="page">
-  <div class="top-bar" onclick="navBack()">← 返回</div>
+  <div class="top-bar" onclick="navBack()">
+    <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>返回</span>
+  </div>
 
-  <div class="status-header">
-    <div class="status-icon">⏳</div>
-    <div class="status-title" id="trackingTitle">救援请求已提交</div>
-    <div class="status-case" id="trackingCase">案件编号：---</div>
+  <div class="subpage-head">
+    <span class="subpage-head-title" id="trackingTitle">救援请求已提交</span>
+    <span class="subpage-head-desc" id="trackingCase">案件编号：---</span>
   </div>
 
   <div class="timeline-card">
-    <div class="card-title">📋 救援进度</div>
+    <div class="card-title">救援进度</div>
     <div class="timeline" id="timelineContainer"></div>
   </div>
 
   <div class="info-card">
-    <div class="card-title">📋 上报信息</div>
-    <div class="info-row"><span class="info-label">伤情类型</span><span class="info-value" id="infoInjury">---</span></div>
-    <div class="info-row"><span class="info-label">上报时间</span><span class="info-value" id="infoTime">---</span></div>
-    <div class="info-row"><span class="info-label">位置坐标</span><span class="info-value" id="infoLoc">---</span></div>
+    <div class="card-title">上报信息</div>
+    <div class="kv-row"><span class="kv-label">伤情类型</span><span class="kv-value" id="infoInjury">---</span></div>
+    <div class="kv-row"><span class="kv-label">上报时间</span><span class="kv-value" id="infoTime">---</span></div>
+    <div class="kv-row"><span class="kv-label">位置坐标</span><span class="kv-value" id="infoLoc">---</span></div>
   </div>
 
   <div class="action-section">
-    <button class="btn-call" onclick="callRescue()">📞 拨打救援电话</button>
+    <button class="btn-call" onclick="callRescue()">拨打救援电话</button>
     <button class="btn-cancel" onclick="cancelRescue()">取消救援请求</button>
   </div>
 
   <div class="tips-card">
-    <span class="tips-icon">💡</span>
-    <span class="tips-text">请保持手机畅通，救援人员正在赶来。请在安全地点等待，切勿随意移动。</span>
+    <svg class="tips-svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#1E6B8A" stroke-width="1.3"/><line x1="12" y1="7" x2="12" y2="13" stroke="#1E6B8A" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17" r="1.3" fill="#1E6B8A"/></svg>
+    <span>请保持手机畅通，救援人员正在赶来。请在安全地点等待，切勿随意移动。</span>
   </div>
 </div>
 
 <!-- ====== 知识库页 ====== -->
 <div id="page-knowledge" class="page">
-  <div class="top-bar" onclick="navBack()">← 返回</div>
+  <div class="top-bar" onclick="navBack()">
+    <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>返回首页</span>
+  </div>
 
-  <div class="header-banner">
-    <div class="header-icon">📚</div>
-    <div class="header-title">离线急救知识库</div>
-    <div class="header-desc">无网络也可查看 · 权威急救指南</div>
+  <div class="subpage-head">
+    <span class="subpage-head-title">离线急救知识库</span>
+    <span class="subpage-head-desc">无网络也可查看 · 权威急救指南 · 持续更新</span>
   </div>
 
   <div class="category-tabs">
     <span class="tab active" onclick="switchKnowledgeTab('all')">全部</span>
-    <span class="tab" onclick="switchKnowledgeTab('bleeding')">🩸 止血</span>
-    <span class="tab" onclick="switchKnowledgeTab('bandage')">🩹 包扎</span>
-    <span class="tab" onclick="switchKnowledgeTab('fixation')">🦴 固定</span>
-    <span class="tab" onclick="switchKnowledgeTab('survival')">🏕️ 生存</span>
+    <span class="tab" onclick="switchKnowledgeTab('bleeding')">止血</span>
+    <span class="tab" onclick="switchKnowledgeTab('bandage')">包扎</span>
+    <span class="tab" onclick="switchKnowledgeTab('fixation')">固定</span>
+    <span class="tab" onclick="switchKnowledgeTab('survival')">生存</span>
   </div>
 
   <div class="article-list" id="articleList"></div>
-  <div class="empty-tip" id="emptyTip" style="display:none"><div class="empty-icon">📭</div><div class="empty-text">暂无相关内容</div></div>
+  <div class="empty-tip" id="emptyTip" style="display:none"><span class="empty-icon">—</span><span class="empty-text">暂无相关内容</span></div>
 </div>
 
 <!-- ====== 知识详情页 ====== -->
 <div id="page-detail" class="page">
-  <div class="top-bar" onclick="navBack()">← 返回</div>
+  <div class="top-bar" onclick="navBack()">
+    <svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>返回知识库</span>
+  </div>
   <div id="detailContent"></div>
   <div class="bottom-actions">
-    <button class="btn-back" onclick="navBack()">← 返回知识库</button>
-    <button class="btn-rescue" onclick="navTo('rescue')">🆘 一键救援</button>
+    <button class="btn-back" onclick="navBack()">返回知识库</button>
+    <button class="btn-rescue" onclick="navTo('rescue')">一键救援</button>
   </div>
 </div>
 
