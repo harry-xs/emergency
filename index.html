@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>应急救护助手</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ====== 首页 ====== -->
+<div id="page-home" class="page active">
+  <div class="hero-section">
+    <div class="hero-icon">⛑️</div>
+    <div class="hero-title">应急救护助手</div>
+    <div class="hero-subtitle">AI智能伤情识别 · 一键救援上报</div>
+  </div>
+
+  <div class="action-area">
+    <button class="btn-ai" onclick="navTo('ai')">
+      <span class="btn-icon">🤖</span>
+      <span class="btn-text">
+        <span class="btn-title">AI伤情识别</span>
+        <span class="btn-desc">拍照上传 · 智能分析伤情</span>
+      </span>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <button class="btn-rescue" onclick="navTo('rescue')">
+      <span class="btn-icon">🆘</span>
+      <span class="btn-text">
+        <span class="btn-title">一键救援上报</span>
+        <span class="btn-desc">自动定位 · 快速求援</span>
+      </span>
+      <span class="btn-arrow">→</span>
+    </button>
+  </div>
+
+  <div class="section-divider">
+    <span class="divider-line"></span>
+    <span class="divider-text">离线急救知识库</span>
+    <span class="divider-line"></span>
+  </div>
+
+  <div class="knowledge-grid">
+    <div class="knowledge-card card-blood" onclick="navTo('knowledge','bleeding')">
+      <span class="card-icon">🩸</span>
+      <span class="card-name">止血</span>
+    </div>
+    <div class="knowledge-card card-bandage" onclick="navTo('knowledge','bandage')">
+      <span class="card-icon">🩹</span>
+      <span class="card-name">包扎</span>
+    </div>
+    <div class="knowledge-card card-fixation" onclick="navTo('knowledge','fixation')">
+      <span class="card-icon">🦴</span>
+      <span class="card-name">固定</span>
+    </div>
+    <div class="knowledge-card card-survival" onclick="navTo('knowledge','survival')">
+      <span class="card-icon">🏕️</span>
+      <span class="card-name">生存</span>
+    </div>
+  </div>
+
+  <div class="footer-tips">
+    <div class="tips-item"><span class="tips-icon">⚠️</span><span class="tips-text">本应用仅供现场急救参考，不能替代专业医疗诊断</span></div>
+  </div>
+</div>
+
+<!-- ====== AI伤情识别页 ====== -->
+<div id="page-ai" class="page">
+  <div class="top-bar" onclick="navBack()">← 返回</div>
+
+  <div class="step-indicator">
+    <div class="step" id="step1-mark"><div class="step-num">1</div><div class="step-label">拍摄伤处</div></div>
+    <div class="step-line" id="step-line1"></div>
+    <div class="step" id="step2-mark"><div class="step-num">2</div><div class="step-label">智能分析</div></div>
+    <div class="step-line" id="step-line2"></div>
+    <div class="step" id="step3-mark"><div class="step-num">3</div><div class="step-label">急救指导</div></div>
+  </div>
+
+  <!-- 步骤1：上传图片 -->
+  <div class="content-card" id="ai-step1">
+    <div class="upload-area" id="uploadArea" onclick="chooseImage()">
+      <div id="uploadPlaceholder">
+        <div class="upload-icon">📸</div>
+        <div class="upload-text">点击拍摄伤处照片</div>
+        <div class="upload-hint">支持拍照或从相册选择</div>
+      </div>
+      <img id="uploadPreview" class="uploaded-image" style="display:none" />
+      <div class="retake-btn" id="retakeBtn" style="display:none" onclick="event.stopPropagation();retakePhoto()">重新拍摄</div>
+    </div>
+    <input type="file" id="fileInput" accept="image/*" capture="environment" style="display:none" onchange="onFileSelected(event)">
+
+    <div id="descSection" style="display:none;margin-top:30rpx;">
+      <div class="desc-title">补充描述（可选）</div>
+      <textarea class="desc-input" id="descInput" placeholder="请描述受伤经过、症状感受等..." maxlength="500"></textarea>
+    </div>
+
+    <button class="submit-btn" id="analyzeBtn" disabled onclick="startAnalysis()">开始智能分析</button>
+  </div>
+
+  <!-- 步骤2：扫描动画 -->
+  <div class="content-card" id="ai-step2" style="display:none">
+    <div class="scan-container">
+      <div class="scan-frame">
+        <img id="scanImage" class="scan-image" />
+        <div class="scan-line"></div>
+      </div>
+      <div class="scan-progress">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-text">AI正在分析伤情...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 步骤3：分析结果 -->
+  <div class="content-card" id="ai-step3" style="display:none;padding-bottom:180px">
+    <div id="confidenceWarning" class="confidence-warning" style="display:none"></div>
+    <div id="dangerAlert" class="danger-alert" style="display:none"></div>
+    <div id="resultSection" class="result-section" style="display:none"></div>
+  </div>
+
+  <div class="fixed-bottom" id="aiBottomBtns" style="display:none">
+    <button class="btn-locate" onclick="getBrowserLocation()">📍 共享位置</button>
+    <button class="btn-rescue-report" onclick="navTo('rescue')">🆘 一键救援上报</button>
+  </div>
+</div>
+
+<!-- ====== 救援上报页 ====== -->
+<div id="page-rescue" class="page">
+  <div class="top-bar" onclick="navBack()">← 返回</div>
+
+  <div class="header-card">
+    <div class="header-icon">🆘</div>
+    <div class="header-title">救援上报</div>
+    <div class="header-desc">请确认以下信息后提交救援请求</div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-title"><span class="title-icon">📍</span>当前位置信息</div>
+    <div id="locationInfo">
+      <div class="loc-loading"><div class="loc-spin"></div><span>正在获取位置...</span></div>
+    </div>
+    <div id="locationDetail" style="display:none"></div>
+    <button class="btn-refresh" id="refreshLocBtn" style="display:none" onclick="refreshLocation()">🔄 刷新位置</button>
+    <button class="btn-get-location" id="getLocBtn" style="display:none" onclick="refreshLocation()">📡 获取位置</button>
+  </div>
+
+  <div class="info-card">
+    <div class="card-title"><span class="title-icon">🩺</span>伤情类型</div>
+    <div class="injury-grid" id="injuryGrid"></div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-title"><span class="title-icon">📝</span>补充说明</div>
+    <textarea class="remark-input" id="remarkInput" placeholder="请描述现场情况、受伤人数等..." maxlength="500"></textarea>
+  </div>
+
+  <div class="submit-section">
+    <button class="btn-submit" id="submitRescueBtn" onclick="submitRescue()">🚑 提交救援请求</button>
+    <div class="submit-tips">提交后救援团队将实时追踪您的状态</div>
+  </div>
+</div>
+
+<!-- ====== 救援追踪页 ====== -->
+<div id="page-tracking" class="page">
+  <div class="top-bar" onclick="navBack()">← 返回</div>
+
+  <div class="status-header">
+    <div class="status-icon">⏳</div>
+    <div class="status-title" id="trackingTitle">救援请求已提交</div>
+    <div class="status-case" id="trackingCase">案件编号：---</div>
+  </div>
+
+  <div class="timeline-card">
+    <div class="card-title">📋 救援进度</div>
+    <div class="timeline" id="timelineContainer"></div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-title">📋 上报信息</div>
+    <div class="info-row"><span class="info-label">伤情类型</span><span class="info-value" id="infoInjury">---</span></div>
+    <div class="info-row"><span class="info-label">上报时间</span><span class="info-value" id="infoTime">---</span></div>
+    <div class="info-row"><span class="info-label">位置坐标</span><span class="info-value" id="infoLoc">---</span></div>
+  </div>
+
+  <div class="action-section">
+    <button class="btn-call" onclick="callRescue()">📞 拨打救援电话</button>
+    <button class="btn-cancel" onclick="cancelRescue()">取消救援请求</button>
+  </div>
+
+  <div class="tips-card">
+    <span class="tips-icon">💡</span>
+    <span class="tips-text">请保持手机畅通，救援人员正在赶来。请在安全地点等待，切勿随意移动。</span>
+  </div>
+</div>
+
+<!-- ====== 知识库页 ====== -->
+<div id="page-knowledge" class="page">
+  <div class="top-bar" onclick="navBack()">← 返回</div>
+
+  <div class="header-banner">
+    <div class="header-icon">📚</div>
+    <div class="header-title">离线急救知识库</div>
+    <div class="header-desc">无网络也可查看 · 权威急救指南</div>
+  </div>
+
+  <div class="category-tabs">
+    <span class="tab active" onclick="switchKnowledgeTab('all')">全部</span>
+    <span class="tab" onclick="switchKnowledgeTab('bleeding')">🩸 止血</span>
+    <span class="tab" onclick="switchKnowledgeTab('bandage')">🩹 包扎</span>
+    <span class="tab" onclick="switchKnowledgeTab('fixation')">🦴 固定</span>
+    <span class="tab" onclick="switchKnowledgeTab('survival')">🏕️ 生存</span>
+  </div>
+
+  <div class="article-list" id="articleList"></div>
+  <div class="empty-tip" id="emptyTip" style="display:none"><div class="empty-icon">📭</div><div class="empty-text">暂无相关内容</div></div>
+</div>
+
+<!-- ====== 知识详情页 ====== -->
+<div id="page-detail" class="page">
+  <div class="top-bar" onclick="navBack()">← 返回</div>
+  <div id="detailContent"></div>
+  <div class="bottom-actions">
+    <button class="btn-back" onclick="navBack()">← 返回知识库</button>
+    <button class="btn-rescue" onclick="navTo('rescue')">🆘 一键救援</button>
+  </div>
+</div>
+
+<script src="js/knowledge-data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
